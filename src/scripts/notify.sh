@@ -31,6 +31,10 @@ BuildMessageBody() {
         
         # shellcheck disable=SC2016
         T1=$(eval echo "$TEMPLATE" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | sed 's/`/\\`/g')
+
+        echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        echo $(eval echo $T1)
+
         T2=$(eval echo \""$T1"\")
 
         echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
