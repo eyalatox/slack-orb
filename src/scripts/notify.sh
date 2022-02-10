@@ -37,6 +37,7 @@ BuildMessageBody() {
 
         T2=$(eval echo \""$T1"\")
 
+
         echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         echo $(eval echo $T2)
     fi
