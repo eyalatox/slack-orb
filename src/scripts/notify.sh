@@ -32,10 +32,9 @@ BuildMessageBody() {
         # shellcheck disable=SC2016
         T1=$(eval echo "$TEMPLATE" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | sed 's/`/\\`/g')
         T2=$(eval echo \""$T1"\")
-        
     fi
     # Insert the default channel. THIS IS TEMPORARY
-    echo "$T2" | jq -Rs .
+    echo "$T2" | jq --slurp --raw-input
     T2=$(echo "$T2" | jq ". + {\"channel\": \"$SLACK_DEFAULT_CHANNEL\"}")
     SLACK_MSG_BODY=$T2
 }
